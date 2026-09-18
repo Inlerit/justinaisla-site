@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Justina Isla — Marketing digital, UX research y diseño</title>
+<meta name="description" content="Justina Isla · Analista de marketing y UX con 8 años de experiencia uniendo datos, comportamiento de usuario y diseño. Madrid.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FCFBF9;
+  --ink:#1C1C1A;
+  --body:#33322E;
+  --muted:#726E66;
+  --accent:#7C2E52;
+  --accent-soft:#F1E4EA;
+  --hair:#E6E2DA;
+  --card:#FFFFFF;
+  --on-accent:#FFFFFF;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#1A1917;
+    --ink:#F3EFE9;
+    --body:#D8D3CA;
+    --muted:#9A948A;
+    --accent:#E59BBE;
+    --accent-soft:#2E2028;
+    --hair:#302D28;
+    --card:#211F1C;
+    --on-accent:#241A20;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#1A1917;--ink:#F3EFE9;--body:#D8D3CA;--muted:#9A948A;
+  --accent:#E59BBE;--accent-soft:#2E2028;--hair:#302D28;--card:#211F1C;--on-accent:#241A20;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--paper);
+  color:var(--body);
+  font-family:'Inter',system-ui,sans-serif;
+  font-weight:450;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  font-feature-settings:"kern","liga","calt";
+}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+
+/* nav */
+nav{padding:26px 0 0;display:flex;justify-content:space-between;align-items:center;}
+.brand{font-family:'Newsreader',serif;font-weight:600;font-size:17px;color:var(--ink);letter-spacing:-.01em;text-decoration:none;}
+.navlinks{display:flex;gap:22px;}
+.navlinks a{color:var(--muted);text-decoration:none;font-size:14.5px;transition:color .18s;}
+.navlinks a:hover{color:var(--accent);}
+@media(max-width:560px){.navlinks{display:none;}}
+
+/* hero */
+header.hero{padding:74px 0 58px;}
+.eyebrow{color:var(--accent);font-weight:600;font-size:14px;margin-bottom:18px;}
+h1{
+  font-family:'Newsreader',serif;
+  font-optical-sizing:auto;
+  font-weight:600;
+  font-size:clamp(44px,9vw,76px);
+  line-height:.96;
+  letter-spacing:-.02em;
+  color:var(--ink);
+}
+.tagline{
+  font-family:'Newsreader',serif;
+  font-style:italic;
+  font-weight:450;
+  font-size:clamp(20px,3.4vw,27px);
+  line-height:1.24;
+  color:var(--ink);
+  margin-top:22px;
+  max-width:19ch;
+}
+.role-label{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:15px;
+  letter-spacing:.14em;
+  color:var(--accent);
+  margin-top:20px;
+}
+.lead{font-size:17px;color:var(--body);margin-top:22px;max-width:52ch;}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px;align-items:center;}
+.btn{
+  display:inline-block;background:var(--accent);color:var(--on-accent);
+  padding:12px 22px;border-radius:999px;text-decoration:none;
+  font-weight:500;font-size:15px;transition:transform .16s,filter .16s;
+}
+.btn:hover{filter:brightness(1.08);transform:translateY(-1px);}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--hair);}
+.btn.ghost:hover{border-color:var(--accent);color:var(--accent);filter:none;}
+
+/* sections */
+section{padding:42px 0;border-top:1px solid var(--hair);}
+.sec-title{
+  font-family:'Newsreader',serif;font-weight:600;font-size:14px;
+  color:var(--muted);margin-bottom:26px;letter-spacing:.01em;
+}
+.about p{font-size:18px;line-height:1.62;color:var(--body);max-width:58ch;}
+.about p + p{margin-top:16px;}
+
+/* what I do — editorial rows, not cards */
+.do-row{padding:22px 0;border-bottom:1px solid var(--hair);}
+.do-row:last-child{border-bottom:none;}
+.do-row h3{
+  font-family:'Newsreader',serif;font-weight:600;font-size:22px;
+  color:var(--ink);margin-bottom:8px;
+}
+.do-row p{font-size:16px;color:var(--body);max-width:58ch;}
+
+/* experience */
+.job{display:flex;gap:20px;padding:15px 0;border-bottom:1px solid var(--hair);}
+.job:last-child{border-bottom:none;}
+.job .yr{color:var(--muted);font-size:14px;white-space:nowrap;flex:0 0 108px;padding-top:2px;}
+.job .meta strong{color:var(--ink);font-weight:600;font-size:16.5px;display:block;}
+.job .meta span{color:var(--muted);font-size:14.5px;}
+@media(max-width:520px){.job{flex-direction:column;gap:2px;}.job .yr{flex:none;}}
+
+/* contact */
+.contact-links{display:flex;flex-direction:column;gap:2px;}
+.contact-links a{
+  display:inline-flex;align-items:baseline;gap:12px;
+  color:var(--ink);text-decoration:none;font-size:19px;
+  font-family:'Newsreader',serif;font-weight:500;
+  padding:11px 0;border-bottom:1px solid var(--hair);transition:color .18s;
+  max-width:max-content;
+}
+.contact-links a:last-child{border-bottom:none;}
+.contact-links a:hover{color:var(--accent);}
+.contact-links a .k{font-family:'Inter';font-weight:500;font-size:13px;color:var(--muted);flex:0 0 64px;}
+
+footer{padding:38px 0 46px;color:var(--muted);font-size:13.5px;border-top:1px solid var(--hair);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+footer a{color:var(--muted);text-decoration:none;}
+footer a:hover{color:var(--accent);}
+
+@media(prefers-reduced-motion:no-preference){
+  .reveal{opacity:0;transform:translateY(12px);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards;}
+  @keyframes rise{to{opacity:1;transform:none;}}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav>
+    <a class="brand" href="#top">Justina Isla</a>
+    <div class="navlinks">
+      <a href="#hago">Qué hago</a>
+      <a href="#experiencia">Experiencia</a>
+      <a href="#formacion">Formación</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </nav>
+
+  <header class="hero reveal" id="top">
+    <h1>Justina Isla</h1>
+    <p class="role-label">CUSTOMER INSIGHTS &nbsp;|&nbsp; UX RESEARCH</p>
+    <p class="lead">Profesional con 8 años de experiencia en UX Research, análisis de comportamiento y diseño digital, con experiencia en optimización de productos digitales, análisis de KPIs, conversión y crecimiento de ventas en mercados LATAM. Experiencia en investigación cualitativa y cuantitativa, identificación de insights y presentación de recomendaciones a stakeholders multidisciplinares.</p>
+    <p class="lead">Actualmente cursando el Máster Universitario en Dirección Comercial y Marketing, con foco en evolucionar hacia posiciones de Customer Insights, Growth, Marketing y Customer Experience.</p>
+    <div class="cta-row">
+      <a class="btn" href="https://www.figma.com/proto/6w10DIArd98mETNplyPlYO/Justina-Isla_CV-Portfolio?page-id=765%3A2&node-id=878-360&viewport=2070%2C-1179%2C0.25&t=RllkkgaOPMnXKOWp-8&scaling=min-zoom&content-scaling=fixed&hide-ui=1" target="_blank" rel="noopener">Ver portfolio</a>
+      <a class="btn ghost" href="cv/CV_JUSTINA_ISLA_ES.pdf" target="_blank" rel="noopener">Descargar CV</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/justina-isla/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </header>
+
+  <section id="hago">
+    <div class="sec-title">Qué hago</div>
+    <div class="do-row">
+      <h3>UX Research</h3>
+      <p>Investigación cualitativa y cuantitativa: entrevistas, usability testing y focus groups combinados con datos para entender de verdad al usuario y priorizar lo que importa.</p>
+    </div>
+    <div class="do-row">
+      <h3>Customer Insights &amp; analítica</h3>
+      <p>Análisis de comportamiento, KPIs, conversión y fidelización. Insights que se convierten en recomendaciones accionables para el negocio, no en reportes que nadie lee.</p>
+    </div>
+    <div class="do-row">
+      <h3>Diseño digital</h3>
+      <p>Diseño de producto, identidad visual y branding. De la estrategia a la pieza final, con criterio y consistencia.</p>
+    </div>
+  </section>
+
+  <section id="experiencia">
+    <div class="sec-title">Experiencia</div>
+    <div class="job">
+      <div class="yr">2024 – 2026</div>
+      <div class="meta"><strong>Visual Designer (freelance)</strong><span>Symbiotic Estudio · Branding, packaging y experiencias de marca</span></div>
+    </div>
+    <div class="job">
+      <div class="yr">2022 – 2023</div>
+      <div class="meta"><strong>Analista UX/UI &amp; Growth</strong><span>Arcos Dorados (McDonald's LATAM) · App, Web y fidelización</span></div>
+    </div>
+    <div class="job">
+      <div class="yr">2021 – 2022</div>
+      <div class="meta"><strong>Tutora UX Research / UX·UI</strong><span>CoderHouse · Mentoría y dictado de clases</span></div>
+    </div>
+    <div class="job">
+      <div class="yr">2017 – 2022</div>
+      <div class="meta"><strong>Especialista en Diseño Digital</strong><span>Jefatura de Gabinete de Ministros (Argentina)</span></div>
+    </div>
+  </section>
+
+  <section id="formacion">
+    <div class="sec-title">Formación</div>
+    <div class="job">
+      <div class="yr">2026 – Presente</div>
+      <div class="meta"><strong>Máster Universitario en Dirección Comercial y Marketing</strong><span>IMF · Universidad Camilo José Cela, Madrid</span></div>
+    </div>
+    <div class="job">
+      <div class="yr">2018 – 2020</div>
+      <div class="meta"><strong>Licenciatura en Diseño Gráfico y Comunicación Visual</strong><span>UCES, Buenos Aires</span></div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <div class="sec-title">Contacto</div>
+    <div class="contact-links">
+      <a href="mailto:islajustina@gmail.com"><span class="k">Email</span> islajustina@gmail.com</a>
+      <a href="https://www.linkedin.com/in/justina-isla/" target="_blank" rel="noopener"><span class="k">LinkedIn</span> linkedin.com/in/justina-isla</a>
+      <a href="https://www.figma.com/proto/6w10DIArd98mETNplyPlYO/Justina-Isla_CV-Portfolio?page-id=765%3A2&node-id=878-360&viewport=2070%2C-1179%2C0.25&t=RllkkgaOPMnXKOWp-8&scaling=min-zoom&content-scaling=fixed&hide-ui=1" target="_blank" rel="noopener"><span class="k">Portfolio</span> Figma</a>
+      <a href="cv/CV_JUSTINA_ISLA_ES.pdf" target="_blank" rel="noopener"><span class="k">CV</span> Descargar (ES)</a>
+    </div>
+  </section>
+
+  <footer>
+    <span>Justina Isla · Madrid</span>
+    <span>&copy; 2026</span>
+  </footer>
+
+</div>
+</body>
+</html>
